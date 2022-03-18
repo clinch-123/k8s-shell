@@ -1,19 +1,19 @@
 脚本运行前须知
 脚本执行顺序
-	在执行master node前 需分别修改node_ip和master_ip
-	Master:master.sh
-	Node:node.sh
-	执行完脚本后根据master节执行脚本后弹出的提示命令在node节点输入即可
-	node节点如需重新加入新节点可以
+	在执行master node前 需分别修改node_ip和master_ip
+	Master:master.sh
+	Node:node.sh
+	执行完脚本后根据master节执行脚本后弹出的提示命令在node节点输入即可
+	node节点如需重新加入新节点可以
 3.4.2	如需node节点重新加入新master
-	停掉kubelet
-	systemctl stop kubelet
-	删除之前的相关文件
-	rm -rf /etc/kubernetes/*
-	重启
-	kubeadm reset 
-	iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
-	加入集群
+  停掉kubelet
+  systemctl stop kubelet
+  删除之前的相关文件	
+  rm -rf /etc/kubernetes/*
+	重启
+	kubeadm reset 
+	iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
+	加入集群
 ```
 3.4.3	其他说明
 #-------------部署flannel网络----------
